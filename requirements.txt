@@ -1,0 +1,10 @@
+extra-streamlit-components==0.1.60
+fer==22.5.1
+keras==2.13.1
+pandas==2.0.3
+Pillow==10.0.1
+spotipy==2.23.0
+streamlit
+streamlit-camera-input-live==0.2.0
+streamlit-extras==0.3.5
+websockets==12.0
