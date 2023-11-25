@@ -3,6 +3,7 @@ from login.loginBO import *
 import spotipy
 from streamlit_extras.switch_page_button import switch_page 
 import time
+from model.modelBO import *
 
 
 st.set_page_config(
@@ -23,6 +24,12 @@ if get_spotify_token():
         switch_page("login")
 
     st.write(f"Welcome to Mood Harmony Player! 👋, {name}")
+    image = st.camera_input("")
+    if image:
+        emotion = detect_emotion(image)
+        print(emotion)
+        if emotion:
+            st.write(f"Your emotion is {emotion}")
 
 else:
     switch_page("login")

@@ -4,6 +4,7 @@ keras==2.13.1
 pandas==2.0.3
 Pillow==10.0.1
 spotipy==2.23.0
+scikit-learn
 streamlit
 streamlit-camera-input-live==0.2.0
 streamlit-extras==0.3.5
