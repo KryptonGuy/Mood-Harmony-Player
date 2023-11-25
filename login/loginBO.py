@@ -30,7 +30,7 @@ def set_spotify_token(token):
 def loginButton(auth_url):
     auth_url_placeholder = st.empty()
     login_button = f'''
-    <a href="{auth_url}" target="_self" style="display: inline-block; background-color: #1DB954; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
+    <a href="{auth_url}" target="_blank" style="display: inline-block; background-color: #1DB954; color: white; padding: 10px; text-decoration: none; border-radius: 5px;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify Logo" style="vertical-align: middle; width: 20px; height: 20px; margin-right: 5px;">
         Login with Spotify
     </a>
