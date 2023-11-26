@@ -4,7 +4,7 @@ from login.loginBO import *
 import spotipy
 
 st.set_page_config(
-    page_title="Spotify Login",
+    page_title="Mood Harmony Player",
     page_icon="🎧",
     initial_sidebar_state="collapsed" 
 )
@@ -13,7 +13,7 @@ sp_oauth, auth_url = authenticate_spotify()
 
 #If Already Login
 if get_spotify_token():
-    switch_page("root")
+    switch_page("Player")
 
 # Login Button
 loginButton(auth_url)
@@ -32,7 +32,8 @@ if code:
     try:
         set_spotify_token(access_token)
         st.success("Login successful!")
-        switch_page("root")
+        switch_page("Player")
+
     except SpotifyException as e:
         clear_session()
         st.error(f"Error during login: {str(e.reason)}")
