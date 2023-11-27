@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 RUN pip3 install -r requirements.txt
 
+RUN echo ${SPOTIFY_SECRETS} >> app/.streamlit/secrets.toml
+
 EXPOSE 8501
 
-ENTRYPOINT ["streamlit", "run", "Player.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "Player.py", "--server.port=8501"]
