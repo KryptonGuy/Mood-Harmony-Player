@@ -16,6 +16,7 @@ if get_spotify_token():
     switch_page("Player")
 
 # Login Button
+st.write("<h2 style='text-align:left;'>Login with Spotify</h2>",unsafe_allow_html=True)
 loginButton(auth_url)
 
 # Callback 

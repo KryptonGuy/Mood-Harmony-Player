@@ -56,7 +56,7 @@ if get_spotify_token():
     if image:
         emotion = detect_emotion(image)
         if emotion:
-            st.write(f"<h3 style='text-align:center;'>You seems to be {emotion}</h3>", unsafe_allow_html=True)
+            st.write(f"<h3 style='text-align:left;'>You seems to be {emotion}</h3>", unsafe_allow_html=True)
             #st.write(f"### Your emotion is {emotion}") 
             tracks_ids = get_tracks(emotion)
             tracks_li = []
@@ -67,6 +67,8 @@ if get_spotify_token():
             tracks = k_most_popular(tracks_li,15)
             play_tracks(tracks, sp)
             populate_tracks(tracks)
+        else:
+            st.write("<h3 style='text-align: center;'>Unable to Detect Face</h3>")
 
 else:
     switch_page("login")

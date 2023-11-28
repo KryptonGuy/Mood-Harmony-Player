@@ -22,7 +22,11 @@ emo_cord = {
 def detect_emotion(image):
     imagePIL = PIL.Image.open(image)
     img = np.array(imagePIL)
+
     detected_emotions = model.detect_emotions(img)
+    if not detected_emotions:
+        return None
+
     emotion_weights = detected_emotions[0]["emotions"]
     emotion_weights = [(emotion_weights[detected_emotions], detected_emotions) for detected_emotions in emotion_weights]
     emotion_weights.sort()
