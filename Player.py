@@ -55,7 +55,9 @@ if get_spotify_token():
     image = st.camera_input("")
     if image:
         emotion = detect_emotion(image)
+        print("got emtion", emotion)
         if emotion:
+            print("In this block")
             st.write(f"<h3 style='text-align:left;'>You seems to be {emotion}</h3>", unsafe_allow_html=True)
             #st.write(f"### Your emotion is {emotion}") 
             tracks_ids = get_tracks(emotion)
@@ -68,7 +70,7 @@ if get_spotify_token():
             play_tracks(tracks, sp)
             populate_tracks(tracks)
         else:
-            st.write("<h3 style='text-align: center;'>Unable to Detect Face</h3>")
+            st.write("<h3 style='text-align: center;'>Unable to Detect Face</h3>", unsafe_allow_html=True)
 
 else:
     switch_page("login")
